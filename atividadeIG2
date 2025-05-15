@@ -1,3 +1,10 @@
+// Matricula: 202412638
+// Nome: Eduarda de Campos Geraldo
+// Email: eduarda.202412638@unilasalle.edu.br
+
+// O que eu fiz no código: desenvolvi o código sozinha, com pesquisa e ajuda dos slides da aula e apoio do chatgpt para entender como implementar melhor as funções solicitadas.
+//
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -5,20 +12,16 @@
 #define TRUE 1
 #define FALSE 0
 
-// ==========================
-// Matricula: 202412638
-// Nome: Eduarda de Campos Geraldo
-// Email: eduarda.202412638@unilasalle.edu.br
-
-// O que eu fiz no código: desenvolvi o código sozinha, com pesquisa e ajuda dos slides da aula e apoio do chatgpt para entender como implementar melhor as funções solicitadas.
-// ==========================
-
+// estrutura de aluno
+    
 typedef struct {
     int matricula;
     float g1;
     float g2;
     float media;
 } Aluno;
+
+// estrutura de pilha
 
 typedef struct {
     Aluno *dados;
@@ -74,6 +77,8 @@ void buscarMatricula(Pilha *p, int matriculaBusca) {
         printf("Aluno com matrícula %d não encontrado.\n", matriculaBusca);
 }
 
+// estrutura de função para ler a nota com vírgula, e não só com ponto
+
 float lervirgula() {
     char entrada[50];
     scanf("%s", entrada);
@@ -86,6 +91,8 @@ float lervirgula() {
 
     return atof(entrada);
 }
+
+// estrutura principal do código
 
 int main() {
     Pilha p;
@@ -145,6 +152,8 @@ int main() {
 
     } while (opcao != 0);
 
+// retorno
+    
     free(p.dados);
     return 0;
 }
